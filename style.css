@@ -51,6 +51,7 @@ nav {
 }
 
 .nav-menu {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -68,6 +69,16 @@ nav {
 .fa-search,
 .fa-shopping-cart {
     font-size: 20px;
+}
+.cart-circle::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: -0px;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 73, 73);
+    border-radius: 50%;
 }
 
 .banner {
@@ -164,21 +175,40 @@ nav {
     color: gray;
 }
 
+.featured {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    gap: 60px;
+}
+
+.featured .featured-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .sign-up {
     padding: 80px;
+    background: rgb(235, 235, 235);
+}
+.sign-up > div {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
     text-align: right;
-    background: rgb(235, 235, 235);
 }
-.sign-up > .content {
+.sign-up > div > .content {
     width: 100%;
     display: flex;
     align-items: flex-end;
 }
-.sign-up > form {
+.sign-up > div > form {
     width: 100%;
     display: flex;
     align-items: center;
@@ -250,9 +280,10 @@ footer {
         margin: 0;
         height: 100%;
         gap: 20px;
+        padding: 50px 0;
     }
     .banner-img img {
-        width: 100%;
+        width: 85%;
     }
     .banner .content {
         text-align: center;
@@ -272,22 +303,38 @@ footer {
     .product-items {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .featured {
+        padding: 50px 0;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .featured-img {
+        width: 100%;
+    }
+
     .sign-up {
+        padding: 0;
+    }
+    .sign-up > div {
         padding: 80px 15px;
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    .sign-up > .content {
+    .sign-up > div > .content {
         align-items: center;
     }
-    .sign-up > form {
+    .sign-up > div > form {
         flex-direction: column;
         gap: 10px;
     }
-    .sign-up form input,
+    .sign-up form input {
+        width: 90%;
+        border-radius: 40px;
+    }
     .sign-up button {
-        width: 100%;
+        width: 40%;
         border-radius: 40px;
     }
 }
@@ -325,22 +372,37 @@ footer {
     .product-items {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .featured {
+        padding: 50px 0;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .featured-img {
+        width: 100%;
+    }
     .sign-up {
+        padding: 0;
+    }
+    .sign-up > div {
         padding: 80px 25px;
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    .sign-up > .content {
+    .sign-up > div > .content {
         align-items: center;
     }
-    .sign-up > form {
+    .sign-up > div > form {
         flex-direction: column;
         gap: 10px;
     }
-    .sign-up form input,
-    .sign-up button {
-        width: 100%;
+    .sign-up > div form input {
+        width: 90%;
+        border-radius: 40px;
+    }
+    .sign-up > div button {
+        width: 30%;
         border-radius: 40px;
     }
 }
